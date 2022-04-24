@@ -8,7 +8,6 @@ const AddService = () => {
         const price = event.target.price.value;
         const quantity = event.target.quantity.value;
         const service = { name, price, quantity }
-        console.log(service);
 
         fetch('http://localhost:5000/user', {
             method: "POST",
@@ -17,7 +16,8 @@ const AddService = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                alert('added service successfully')
+                event.target.reset();
             })
     }
     return (
